@@ -1,0 +1,56 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-color: rgb(70, 142, 236);
+    font: normal 15pt Arial
+}
+
+header {
+    color: white;
+    text-align: center;
+}
+
+header h1 {
+    margin: 40px;
+}
+
+section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.363);
+}
+
+input {
+    display: block;
+    border: 0px none;
+    border-bottom: 1px solid black;
+}
+
+button {
+    margin: 20px 0px;
+    padding: 5px 20px;
+    background-color: rgba(0, 0, 0, 0.322);
+    font-weight: bold;
+}
+
+#resposta {
+    margin-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.425);
+}
+
+select {
+    width: 100px;
+    height: 100px;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+}

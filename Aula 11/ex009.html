@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Cheque de Nacionalidade</h1>
+    <p>Digite aqui seu pais de origem</p>
+    <input type="text" name="origem" id="origem">
+    <input type="button" value="Enter" onclick="clicar()">
+    <div id="impreção"></div>
+    <script>
+        function clicar() {
+            var pais = window.document.getElementById('origem')
+            var prença = window.document.getElementById('impreção')
+            var nacionalidade
+
+            if (pais.value.toUpperCase() == 'BRASIL') {
+                nacionalidade = 'Brasileiro'
+            } else {
+                nacionalidade = 'Estrangeiro'
+            }
+            
+            prença.innerHTML = `Vindo de ${pais.value}, você é ${nacionalidade}`
+        }
+    </script>
+</body>
+</html>

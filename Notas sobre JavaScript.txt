@@ -1,0 +1,229 @@
+
+====================================================|Codigos Antigos|=====================================================
+
+function mostrarLista(id, index) {
+    console.log(`Função mostrarLista acionada pela abilidade ${id}`)
+    var lista = window.document.getElementById(`lista_teste${index}`)
+    var linhaTeste = window.document.getElementById(`${id}`)
+    linhaTeste.innerHTML = `${id[0].toUpperCase()}${id.slice(1)}`
+    lista.style.display = 'block'
+}
+
+==========================================================================================================================
+
+Data types «--|Pode-se usar o operador typeof para descobrir o tipo de uma variavel
+
+number
+    Infinity
+    NaN
+string
+boolean
+null
+undefined
+object
+    Array
+finction
+
+=================================================|Tratamento de Variavel|=================================================
+
+Number.parseInt(n) «--|Para converter uma string em número
+Number.parseFloat(n)
+
+String(n) «--|Para converter um número em string
+n.toString()
+
+var s = 'JavaScript'
+'Eu estou aprendendo s'  «--|Não faz interpolação
+'Eu estou aprendendo' + string  «--|Usa concatenação
+`Eu estou aprendendo ${s}`  «--|usa template string
+
+Tratamento de strings:    |  Tratamento de números   //n.toLocaleString('pt-BR', 'currency', currency: 'BRL')
+s.length                  |  n.toFixed(2)
+s.toUpperCase()           |  n.toFixed(2),replace('.', ',')
+s.toLowerCase()           |
+
+=======================================================|Operadores|=======================================================
+
+Operadores em JavaScript:
+Aritiméticos                                    Ordem de precedência
+    +   «--| Adição                                  ()    
+    -   «--| Subtração                               **
+    *   «--| Multiplicação                           *  /  %
+    /   «--| Divisão                                 -   +
+    %   «--| Resto da Divisão                 > < >= <= == != ===
+    **  «--| Potenciação                             !
+Atribuição                                           &&
+    =   «--| Atribuição                              ||
+    +=  «--| Auto-Atribuição
+    ++  «--| Incremento
+Relacionais
+    >   «--| Maior
+    <   «--| Menor
+    >=  «--| Maior ou igual
+    <=  «--| Menor ou igual
+    ==  «--| Igual
+    !=  «--| Diferente
+    === «--| Igualdade restrita
+Lógicos
+    !   «--| Negação //Igual ao (not) do python
+    &&  «--| Conjução //Igual ao (and) do python
+    ||  «--| Disjunção //Igual ao (or) do python
+Ternario
+    ?   «--| Retorna um valor boleano
+    :   «--| Rertorna um valor condicionado ao teste do operador(?)
+
+=========================================================|D.O.M.|=========================================================
+
+Document
+    Object
+        Model  «--| Modelo de Objetos para documentos
+
+Elementos na Árvore DOM:
+
+           window
+          /   |   \
+         /    |    \
+location  document  history
+              |
+            html
+            /  \
+           /    \
+          /      \
+      head       body
+     /  |        /|\
+meta  title     / | \
+               /  |  \
+              h1  p  div
+                  |
+                strong
+
+Os elementos podem ser selecionados por:
+Marca
+    getElementsByTagName()[]
+ID
+    getElementById()
+Nome
+    getElementsByName()[]
+Classe
+    getElementsByClassName()[]
+Seletor
+    querySelector()
+    querySelectorAll()
+
+========================================================|Eventos|=========================================================
+
+Eventos:  «--|<div id='area' onclick="clicar()" onmouseenter='entrar()' onmouseout="sair()"> // Evento criado em HTML
+mouseenter   |a.addEventListener('click', clicar) // Evento criado na parte de JavaScript
+mousemove    |<script>
+mousedown    |var a = window.document.getElementById('area')
+mouseup      |function ação(a) {
+click        |    a.innerText = 'Clicou!'
+mouseout     |}
+             |</script>
+
+(function teste() {
+    window.alert('Teste') «--| Expressão de Função Invocada Imediatamente
+} ())
+
+function getRandomInt(min, max) {  «--| Função de randint
+    min = Math.ceil(0)
+    max = Math.floor(11)
+    return Math.floor(Math.random() * (max - min)) + min 
+} 
+
+=======================================================|Condições|========================================================
+
+ Composto                  Aninhado                                  Aninhado com Hora Local
+
+|if (condição) {         | var idade = 67                           | var agora = new Date()
+|    True                | console.log(`Você tem ${idade} anos`)    | var hora = agora.getHours()      
+|} else {                | if (idade < 16) {                        | console.log(`Agora são exatamente ${hora} horas`)
+|    False               |     console.log('Não vota')              | 
+|}                       | } else if (idade < 18 || idade > 65) {   | if (hora < 12) {
+|                        |         console.log('Voto opcional')     |    console.log('Bom Dia!') 
+|                        | } else {                                 | } else if (hora <= 18) {
+|                        |         console.log('Vota obrigatoprio') |    console.log('Boa Tarde!')
+|                        | }                                        | } else {
+|                        |                                          |    console.log('Boa Noite!')
+|                        |                                          | }
+|                        |                                          |
+
+Condição multipla:  «--| Exemplo em Programação/Java Script/Aula 12/ex013.js
+
+switch (expressão) {
+    case valor1:
+        teste
+        break
+    case valor2:
+        teste
+        break
+    case valor3:
+        teste
+        break
+    default:  «--| Este tem a mesma função do else
+        teste
+        break «--| Para condições multiplas, a cada caso deve necessariamente terminar com break
+}
+
+================================================|Estruturas de repetição|=================================================
+
+
+Estrutura While:
+var c = 1          «--| Esta variavel serve como um contador
+while (c <= 6) {   «--| Teste logico
+    console.log('Tudo bem?')
+    c ++  «--| Operação que avança um numero do contador
+}
+
+Estrutura Do While:
+var c = 1                         «--| Contador
+do {
+    console.log(`Passo ${c}`)     «--| O comando a ser repetido
+    c ++
+} while (c <= 6)                  «--| E o teste logico no final do laço
+
+for (var c= 1; c <= 10; c++) {
+    console.log(`Passo ${c}` )
+}
+
+==================================================|Variaveis Compostas|===================================================
+
+variavel simples:
+
+var variavel_1 = valor_1
+var variavel_2 = valor_2
+var variavel_3 = valor_3
+
+array\vetor:
+
+var variaveis = [valor_1, valor_2, valor_3]  valor_4]
+        |          |        |        |         |
+      vetor       key0     key1     key2      key3
+        |                                      |
+variaveis[3] = valor_4 <-----------------------|        «--|Isso atribui valor para uma chave especifica
+variaveis.push(valor_5)  «--|Isso adiciona novos valores ao vetor
+variaveis.length         «--|Para retornar o tamanho do vetor
+variaveis.sort()         «--|reorganiza os elementos em ordem cresente
+variaveis.indexOf(valor_4) «--|retorna a posição em que valor_4 se encontra, sendo que -1 significa que não ha este valor
+
+for (var index=0: index < variaveis.length: index++) {  «--|Estrutura de repetição para imprimir o vetor no console
+    cosole.log(variaveis[index])
+}
+
+for (var index in variaveis) {             «--|Estrutura simplificada pelo in como 'for c in range(0, 10):' 
+    console.log(variaveis[index])
+}
+
+=========================================================|Funções|========================================================
+.Funções são ações executadas assim que são chamadas ou em decorrência de um evento.
+
+.         arâmetro formal   ||   
+.                 |         ||   
+|->->função('parâmetro') {  ||function par_impar(n) {
+|        ação     |         ||   if (n%2==0) {
+|        retorno  |         ||      return 'par'
+|    }            |         ||   } else {
+|                 |         ||      return 'impar'
+|-<-função(teste)-|         ||   }
+.            |              ||}
+.       parâmetro real      ||var resposta = par_impar(11)
