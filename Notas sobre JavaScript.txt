@@ -201,9 +201,10 @@ var variaveis = [valor_1, valor_2, valor_3]  valor_4]
       vetor       key0     key1     key2      key3
         |                                      |
 variaveis[3] = valor_4 <-----------------------|        «--|Isso atribui valor para uma chave especifica
-variaveis.push(valor_5)  «--|Isso adiciona novos valores ao vetor
-variaveis.length         «--|Para retornar o tamanho do vetor
-variaveis.sort()         «--|reorganiza os elementos em ordem cresente
+variaveis.push(valor_5)    «--|Isso adiciona novos valores ao final do vetor
+variaveis.unshift(valor_5) «--|Isso adiciona novos valores ao inicio do vetor
+variaveis.length           «--|Para retornar o tamanho do vetor
+variaveis.sort()           «--|reorganiza os elementos em ordem cresente
 variaveis.indexOf(valor_4) «--|retorna a posição em que valor_4 se encontra, sendo que -1 significa que não ha este valor
 
 for (var index=0: index < variaveis.length: index++) {  «--|Estrutura de repetição para imprimir o vetor no console
