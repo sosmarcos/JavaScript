@@ -1,0 +1,29 @@
+<DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 2</title>
+</head>
+<body>
+    <h1>Desafio II</h1>
+    <p id="paragrafo">
+        Digite seu nome: 
+        <input type="text" id="nome"> 
+        <input type="button" value="Enter" onclick="clicar()">
+    </p>
+    <script>
+        function clicar() {
+            var nome = window.document.getElementById('nome')
+            var paragrafo = window.document.getElementById('paragrafo')
+
+            if (nome.value == '') {
+                window.alert('Digite seu nome')
+            } else { 
+                paragrafo.innerText = `Ola ${nome.value}, seja bem vindo ao desafio II`
+            }
+        }
+    </script>
+</body>
+</html>
