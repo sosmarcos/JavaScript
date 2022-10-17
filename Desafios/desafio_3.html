@@ -1,0 +1,44 @@
+<DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Desafio 3</title>
+    <style>
+        input.entrada {
+            width: 30;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio III</h1>
+    <h2>Soma entre dois números</h2>
+
+    <p id="paragrafo"><input type="text" id="n1" class="entrada"> + <input type="text" id="n2" class="entrada"> = </p>
+    <input type="button" value="Somar" id="botão" onclick="clicar()">
+    
+
+    <script>
+        var resultado = false
+        function clicar() {    
+            var paragrafo = window.document.getElementById('paragrafo') 
+            var botão = window.document.getElementById('botão')
+
+            if (resultado) {
+                paragrafo.innerHTML = `<input type="text" id="n1" class="entrada"> + <input type="text" id="n2" class="entrada"> = `
+                botão.value = 'Somar'
+                resultado = false
+            } else {
+                var número_1 = window.document.getElementById('n1').value
+                var número_2 = window.document.getElementById('n2').value
+
+                paragrafo.innerText = `${número_1} + ${número_2} = ${parseInt(número_1) + parseInt(número_2)}`
+                botão.value = 'Voltar'
+                resultado = true
+            }
+        }
+    </script>
+</body>
+</html>
