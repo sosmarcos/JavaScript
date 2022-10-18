@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Desafio 5</title>
+    <style>
+        input {
+            width: 30px;
+            border-width: 0px;
+            border-bottom-width: 1px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio V</h1>
+    <p>Exercício 5: Faça um programa que leia um número Inteiro e mostre na tela o seu sucessor e seu antecessor.</p>
+    <h2>Antecessor e Sucessor</h2>
+    <p>
+        Digite um número: <input type="text" id="entrada" onchange="f()">
+    </p>
+    <script>
+        function f() {
+            var entrada = window.document.getElementById('entrada').value
+            if (isNaN(entrada)) {window.alert('Digite um número inteiro')} 
+            else {
+                entrada = parseInt(entrada)
+                window.document.body.innerHTML += `<p>Número ${entrada}. Antecedido por ${entrada - 1} e Sucedido por ${entrada + 1}</p>`
+            }
+        }
+    </script>
+</body>
+</html>
