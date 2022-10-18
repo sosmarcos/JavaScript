@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lnag="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Desafio 7</title>
+    <style>
+        input {
+            width: 100px;
+            border-width: 0px;
+            border-bottom-width: 1px;
+        }
+
+        div{
+            display: inline-block;
+            margin: 5px;
+            padding: 10px;
+            background-color: #1a1a1a;
+            color: #e2e2e2;
+            border-radius: 5px;
+            box-shadow: -1px 6px 10px rgb(0 0 0 / 36%);
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio VII</h1>
+    <p>
+        Exercício 7: Desenvolva um programa que leia as duas notas de um aluno, calcule e mostre a sua média.
+    </p>
+    <h2>Média Aritmética</h2>
+    <p id="paragrafo">
+        Nome: <input type="text" id="entrada" onchange="f()">
+    </p>
+    <script>
+        var primeiraNota = 0, segundaNota = 0
+        var nome = ''
+        
+        function f() {
+            var entrada = window.document.getElementById('entrada')
+            var paragrafo = window.document.getElementById('paragrafo')
+
+            if (nome == '') {
+                nome = entrada.value
+                paragrafo.innerHTML = 'Primeira nota: <input type="text" id="entrada" onchange="f()">'
+            }
+            else {
+                if (isNaN(entrada.value)) {window.alert('Digite um número')}
+                else {
+                    entrada = parseFloat(entrada.value)
+                    if (!primeiraNota) {
+                        primeiraNota = entrada 
+                        paragrafo.innerHTML = `Segunda nota: <input type="text" id="entrada" onchange="f()">`
+                    } else {
+                        segundaNota = entrada
+                        paragrafo.innerHTML = `Nome: <input type="text" id="entrada" onchange="f()">`
+
+                        document.body.innerHTML += `
+                        <div>Aluno: ${nome[0].toUpperCase()}${nome.toLowerCase().slice(1)}
+                        <br>
+                        <br>Primeira nota: ${primeiraNota}
+                        <br>Segunda nota: ${segundaNota}
+                        <br>Media do aluno: ${(primeiraNota+segundaNota)/2}</div>`
+
+                        primeiraNota = 0
+                        segundaNota = 0
+                        nome = ''
+                    }
+                }  
+            }
+        }
+    </script>
+</body>
+</html>
