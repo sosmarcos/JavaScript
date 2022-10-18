@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Desafio 4</title>
+</head>
+<body>
+    <h1>Desafio IV</h1>
+    <h2>Digite alguma coisa</h2>
+    <input id="entrada" onchange="teste()">
+    <script>
+        function teste() {
+            var entrada = window.document.getElementById('entrada').value
+            if (!isNaN(entrada)) {
+                entrada = parseInt(entrada)
+            }
+            window.document.body.innerHTML += `<p>
+                Variavel: ${entrada} <br>
+                Tipo Primitivo: ${typeof entrada}
+                </p>`
+        }
+    </script>
+</body>
+</html>
