@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Desafio 6</title>
+    <style>
+        input {
+            width: 30px;
+            border-width: 0px;
+            border-bottom-width: 1px;
+        }
+
+        div {
+            display: inline-block;
+            width: max-content;
+            margin: 5px;
+            padding: 10px;
+            border-radius: 5px;
+            color: rgb(168, 168, 168);
+            background-color: rgb(15, 15, 15);
+            box-shadow: -1px 6px 10px rgb(0 0 0 / 36%);
+        }
+
+        div:hover {
+            transition-duration: 0.1s;
+            color: black;
+            background-color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio VI</h1>
+    <p>Exercício 6: Crie um algoritmo que leia um número e mostre o seu dobro, triplo e raiz quadrada.</p>
+    <h2>Dobro, Triplo, Raiz Quadrada</h2>
+    <p>
+        Digite um número: <input type="text" id="entrada" onchange="f()">
+    </p>
+    <script>
+        function f() {
+            var entrada = window.document.getElementById('entrada').value
+
+            if (isNaN(entrada)) {window.alert('Digite um número inteiro')}
+            else {
+                entrada = parseInt(entrada)
+                document.body.innerHTML += `
+                    <div>Número: ${entrada}
+                    <br>O dobro: ${entrada*2}
+                    <br>O triplo: ${entrada*3}
+                    <br>Raiz quadrada: ${Math.sqrt(entrada)}</div>`
+            }
+        }
+    </script>
+</body>
+</html>
