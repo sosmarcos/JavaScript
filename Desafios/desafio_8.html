@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Desafio 8</title>
+    <style>
+        input {
+            border-width: 0px;
+            border-bottom-width: 1px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio VIII</h1>
+    <p>Exercício 8: Escreva um programa que leia um valor em metros e o exiba convertido em centímetros e milímetros.</p>
+    <h2>Conversor de Medidas</h2>
+    <p>
+        Digite um valor: <input type="text" id="entrada" onchange="f()">
+    </p>
+    <script>
+        function f() {
+            var entrada = window.document.getElementById('entrada')
+            var metros, centímetros, milímetros
+            
+            if (isNaN(entrada.value)) {window.alert('Digite um número')}
+            else {
+                metros = parseFloat(entrada.value)
+                centímetros = metros*100
+                milímetros = metros*1000
+
+                document.body.innerHTML += `<p>${metros}m equivalem a ${centímetros}cm e a ${milímetros}mm</p>`
+            }
+        }
+    </script>
+</body>
+</html>
