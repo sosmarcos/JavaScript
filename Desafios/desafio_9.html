@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Desafio 9</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        h1 {
+            background-color: #1d1d1d;
+            color: #eaeaea;
+            margin: 0px;
+            padding: 15px;
+            font: bold 3em times;
+        }
+
+        h2 {
+            margin: 5px;
+            font: bold 2em times;
+        }
+
+        p {
+            margin: 5px;
+            padding: 10px;
+            font: normal 1.1em times;
+        }
+
+        input {
+            width: 30px;
+            border-width: 0px;
+            border-bottom-width: 1px;
+        }
+
+        div {
+            display: inline-block;
+            background-color: #1d1d1d;
+            color: #eaeaea;
+            margin: 5px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: -1px 2px 3px black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio IX</h1>
+    <p>Exercício 9: Faça um programa que leia um número Inteiro qualquer e mostre na tela a sua tabuada.</p>
+    <h2>Tabuada</h2>
+    <p>
+        Digite um número para ver sua tabuada: <input type="text" id="entrada" onchange="f()">
+    </p>
+    <script>
+        var div = 1
+        function f() {
+            var entrada = window.document.getElementById('entrada')
+            var número
+
+            if (isNaN(entrada.value)) {window.alert('Digite um número')}
+            else {
+                número = parseInt(entrada.value)
+                document.body.innerHTML += `<div id="div_${div}"></div>`
+
+                for (var c=1; c<=10; c++) {
+                    window.document.getElementById(`div_${div}`).innerHTML += `${número} x ${c} = ${número*c}<br>`
+                }
+                div++
+            }
+        }
+    </script>
+</body>
+</html>
