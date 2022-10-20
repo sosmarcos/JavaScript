@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Desafio 11</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: #222222;
+        }
+
+        h1 {
+            padding: 20px 10px;
+            background-image: linear-gradient(to right, #9b1c1c, #c22c2c);
+            color: #f2de05;
+            font-size: 3em;
+            box-shadow: 0px 1px 3px 1px #0000006e;
+        }
+
+        section {
+            margin: 30px auto;
+            max-width: 1150px;
+            min-height: 500px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 2px 2px 4px 0px #00000054;
+        }
+
+        h2 {
+            padding: 10px 20px;
+            background-image: linear-gradient(165deg, #9b1c1c, #c22c2c);
+            color: #e7d512;
+            border-radius: 10px 10px 0px 0px;
+            font-size: 2em;
+        }
+
+        p {
+            margin: 5px 15px;
+            padding: 10px 0px;
+            font-size: 1.1em;
+        }
+
+        #problema {
+            border-bottom: solid 1px #adadad;
+        }
+
+        #rotulo { 
+            display: inline-block;
+            margin-right: 0px;
+        }
+
+        input{
+            width: 50px;
+            border: dashed 0px black;
+            border-bottom-width: 1px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio XI</h1>
+    <section id="pagina">
+        <h2>Pintando Parede</h2>
+        <p id="problema">
+            <strong>Exercício 11:</strong> Faça um programa que leia a largura e a altura de uma parede em metros, 
+            calcule a sua área e a quantidade de tinta necessária para pintá-la, sabendo que cada litro 
+            de tinta pinta uma área de 2 metros quadrados.
+        </p>
+        <p id="rotulo">Largura da parede:</p> 
+        <input type="text" id="entrada" onchange="f()">
+        
+    </section>
+    <script>
+        var medida = 0
+        var largura, altura
+        function f() {
+            var rotulo = window.document.getElementById('rotulo')
+            var entrada = window.document.getElementById('entrada')
+            var pagina = window.document.getElementById('pagina')
+            
+            if (isNaN(entrada.value)) {window.alert('Digite um número')}
+            else {
+                if (!medida) {
+                    largura = parseFloat(entrada.value)
+                    rotulo.innerText = 'Altura da parede: '
+
+                    medida = 1
+                } else {
+                    altura = parseFloat(entrada.value)
+                    rotulo.innerText = 'Largura da parede:'
+
+                    pagina.innerHTML += `
+                    <p>
+                        Sua parede tem a dimensão de <strong>${largura}x${altura}</strong> e sua área é de <strong>${largura*altura}m²</strong>.
+                        Para pintar essa parede, você precisará de <strong>${(largura*altura)*1/2}</strong> litros de tinta.
+                    </p>`
+                    medida = 0
+                }
+            }
+        }
+    </script>
+</body>
+</html>
