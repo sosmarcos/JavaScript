@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Desafio 12</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: #ffa300;
+        }
+
+        h1 {
+            padding: 20px 10px;
+            font: bold 3em times;
+            color: #f1cc00;
+            background-image: linear-gradient(141deg, #146601, #38a51e);
+            box-shadow: 0px 3px 6px 0px #0000004d;
+        }
+
+        section {
+            min-height: 500px;
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px 0px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 2px 2px 0px #00000045;
+        }
+
+        h2 {
+            padding: 10px;
+            background-image: linear-gradient(90deg, #146601, #2c8118);
+            color: #eabe00;
+        }
+
+        p {
+            margin: 10px 20px;
+            font: normal 1.1em black;
+        }
+
+        #problema {
+            padding: 0px 0px 20px 0px;
+            border-bottom: dashed 2px green;
+        }
+
+        input {
+            width: 50px;
+            border: dashed 1px black;
+            border-width: 0px 0px 1px 0px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio XII</h1>
+    <section id="principal">
+        <h2>Calculando Descontos</h2>
+        <p id="problema">Exercício 12: Faça um algoritmo que leia o preço de um produto e mostre seu novo preço, com 5% de desconto.</p>
+        <p>
+            Digite o preço do seu produto: <input type="text" id="entrada" onchange="f()">
+        </p>
+    </section>
+    <script>
+        function f() {
+            var entrada = window.document.getElementById('entrada')
+            var principal = window.document.getElementById('principal')
+            var preço, desconto
+
+            if (isNaN(entrada.value)) {window.alert('Digite um número')}
+            else {
+                preço = parseFloat(entrada.value)
+                desconto = preço*5/100
+
+                principal.innerHTML += `
+                <p>
+                    O produto custava <strong>R&#36; ${preço.toFixed(2)}</strong>, 
+                    com 5&#37; de desconto vai custar <strong>R&#36; ${(preço - desconto).toFixed(2)}</strong>
+                </p>`
+            }
+        }
+    </script>
+</body>
+</html>
