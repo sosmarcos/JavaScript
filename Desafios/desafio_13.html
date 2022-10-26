@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Desafio 13</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px
+        }
+
+        body {
+            background-color: #d9deea;
+        }
+
+        h1 {
+            padding: 20px 10px;
+            color: white;
+            background-image: linear-gradient(125deg, #190ac3, #008eff);
+            font: bold 3em times;
+            box-shadow: 0px 2px 4px 0px #0000007d;
+        }
+
+        main {
+            margin: 20px auto;
+            max-width: 1000px;
+            min-height: 500px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 2px 3px 4px 1px #0000004a;
+        }
+
+        h2 {
+            padding: 20px;
+            font: bold 2em times;
+            color: #0235de;
+        }
+        
+        p {
+            margin: 10px 20px;
+            padding-top: 10px;
+            font: normal 1.1em arial;
+        }
+
+        #problema {
+            padding-bottom: 10px;
+            border-bottom: dashed 2px black;
+        }
+
+        input {
+            width: 70px;
+            border-style: dashed;
+            border-color: black;
+            border-width: 0px 0px 2px 0px;
+            font: bold 1em times;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio XIII</h1>
+    <main id="principal">
+        <h2>Reajuste Salarial</h2>
+        <p id="problema">
+            Exercício 13: Faça um algoritmo que leia o salário de um funcionário e mostre seu novo salário, com 15% de aumento.
+        </p>
+        <p>
+            Digite o salário do seu funcionario: <input type="text" id="entrada" onchange="f()">
+        </p>
+        <script>
+            function f() {
+                var entrada = window.document.getElementById('entrada')
+                var principal = window.document.getElementById('principal')
+                var salário, aumento
+
+                if (isNaN(entrada.value)) {window.alert('Digite um valor numérico')}
+                else {
+                    salário = parseFloat(entrada.value)
+                    aumento = salário*15/100
+
+                    principal.innerHTML += `
+                    <p>
+                        Um fincionário que ganha <strong>R&#36; ${salário.toFixed(2)}</strong>, 
+                        com 15&#37; de aumento, receberá <strong>R&#36; ${(salário + aumento).toFixed(2)}</strong>.
+                    </p>`
+                }
+            }
+        </script>
+    </main>
+</body>
+</html>
