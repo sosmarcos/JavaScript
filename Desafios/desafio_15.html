@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Desafio 15</title>
+    <style>
+        @font-face {
+            font-family: isla;
+            src: url(fonts/Island_Moments/IslandMoments-Regular.ttf) format('TrueType');
+        }
+
+        @font-face {
+            font-family: tenor;
+            src: url(fonts/Tenor_Sans/TenorSans-Regular.ttf) format('TrueType');
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: #6acac9cf;
+        }
+
+        h1 {
+            color: white;
+            background-image: linear-gradient(45deg, #00a080, #528f7b);
+            padding: 10px;
+            font: normal 6em 'isla', times;
+            box-shadow: 1px 1px 1px #0000004a;
+            text-shadow: 1px 1px 1px black;
+        }
+
+        main {
+            background-color: white;
+            padding: 0px 60px;
+            min-height: 500px;
+            max-width: 1000px;
+            margin: 1px auto;
+            box-shadow: 1px 1px 4px #0000004a;
+            font-family: arial;
+            text-align: justify;
+        }
+
+        h2 {
+            padding: 20px;
+            font: normal 3em 'tenor';
+            border-bottom: solid 2px #6c6c6c;
+        }
+
+        p {
+            padding: 10px 0px;
+        }
+
+        input {
+            width: 60px;
+            height: 20px;
+            background-color: #fbfbfb;
+            border-width: 0px;
+            box-shadow: inset 1px 1px 0px 0px #0000001a;
+        }
+
+        div {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px;
+            background-color: #129ecf;
+            color: white;
+            border-radius: 3px;
+            box-shadow: 1px 1px 1px #00000033;
+        }
+
+        div > h3 {
+            padding-bottom: 5px;
+            border-bottom: dashed 2px white;
+        }
+
+        div > p {
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio XV</h1>
+    <main id="principal">
+        <h2>Aluguel de Carros</h2>
+        <p id="problema">
+            Exercício 15: Escreva um programa que pergunte a quantidade de Km percorridos por um carro alugado e a 
+            quantidade de dias pelos quais ele foi alugado. Calcule o preço a pagar, sabendo que o carro custa R$60 
+            por dia e R$0,15 por Km rodado.
+        </p>
+        <p id="rotulo">Digite a quantidade de quilómetros rodados: <input type="text" id="entrada" onchange="f()"></p>
+    </main>
+    <script>
+        var cont = 0
+        var km, dias
+
+        function f() {
+            var entrada = window.document.getElementById('entrada')
+            var rotulo = window.document.getElementById('rotulo')
+            var principal = window.document.getElementById('principal')
+
+            if (isNaN(entrada.value)) {window.alert('Digite um valor numérico')}
+            else {
+                if (!cont) {
+                    km = parseFloat(entrada.value)
+                    rotulo.innerHTML ='Agora digite a quantidade de dias: <input type="text" id="entrada" onchange="f()">'
+
+                    cont ++
+                } else {
+                    dias = parseInt(entrada.value)
+                    rotulo.innerHTML = 'Digite a quantidade de quilómetros rodados: <input type="text" id="entrada" onchange="f()">'
+                    
+                    principal.innerHTML += `
+                    <div>
+                        <h3>Conta</h3>
+                        <p>Dias Alugados: ${dias}</p>
+                        <p>Km Rodados: ${km}</p>
+                        <p>Total a Pagar: R&#36; ${(60*dias+km*0.15).toFixed(2)}</p>
+                    </div>`
+                    
+                    cont = 0
+                    km = 0
+                    dias = 0
+                }
+            }
+        }
+    </script>
+</body>
+</html>
