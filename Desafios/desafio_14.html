@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Desafio 14</title>
+    <style>
+        @font-face {
+            font-family: jacinto;
+            src: url(fonts/jacinto_sans/Jacinto_Sans.otf) format('OpenType');
+        }
+
+        @font-face {
+            font-family: astro;
+            src: url(fonts/astrolab/Astrolab.ttf) format('TrueType');
+        }
+
+        @font-face {
+            font-family: misa;
+            src: url(fonts/13misa/13_Misa.TTF) format('TrueType'); 
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: #141957;
+        }
+
+        h1 {
+            background-image: linear-gradient(45deg, #ffb911, #ffcd00);
+            color: #043995;
+            font: bold 3em 'jacinto', arial;
+            padding: 20px 10px;
+            border-width: 0px 0px 0px 5px;
+            border-style: solid;
+            box-shadow: 0px 15px 20px 0px #0000002e;
+        }
+
+        h2 {
+            font-size: 3em;
+            font-weight: normal;
+            text-align: center;
+            background-color: #141957;
+            color: #e6b339;
+        }
+
+        main {
+            background: white;
+            margin: 30px auto;
+            max-width: 1000px;
+            min-height: 500px;
+            border-radius: 3px;
+            font-family: jacinto, time;
+        }
+
+        main > * {
+            padding: 10px 30px;
+        }
+
+        p {
+            font: normal 1em Verdana;
+        }
+
+        #problema {
+            padding-top: 20px;
+            padding-bottom: 30px;
+            border-bottom: dashed 5px #141957;
+        }
+
+        input {
+            width: 70px;
+            height: 22px;
+            border-width: 0px;
+            box-shadow: inset 1px 1px 1px 0px #00000045;
+            background-color: #e9eaeb;
+            font: normal 0.7em 'astro';
+        }
+    </style>
+</head>
+<body>
+    <h1>DESAFIO XIV</h1>
+    <main id="principal">
+        <h2>Conversor de Temperaturas</h2>
+        <p id="problema">
+            Exercício 14: Escreva um programa que converta uma temperatura de graus Celsius para graus Fahrenheit.
+        </p>
+        <p>
+            Informe a temperatura em °C: <input type="text" id="entrada" onchange="f()">
+        </p>
+    </main>
+    <script>
+        function f() {
+            var entrada = window.document.getElementById('entrada')
+            var principal = window.document.getElementById('principal')
+            var temperatura
+
+            if (isNaN(entrada.value)) {window.alert('Digite um valor numérico')}
+            else {
+                temperatura = parseFloat(entrada.value)
+
+                principal.innerHTML += `
+                <p>
+                   A temperatura de <strong>${temperatura}°C</strong>, Corresponde a <strong>${(temperatura/5*9+32).toFixed(1)}°F</strong>.
+                </p>`
+            }
+        }
+    </script>
+</body>
+</html>
