@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Desafio 16</title>
+    <style>
+        @font-face {
+            font-family: moby;
+            src: url(fonts/moby_dick/Moby\ DIck.ttf) format('TrueType');
+        }
+        @font-face {
+            font-family: tenor;
+            src: url(fonts/Tenor_Sans/TenorSans-Regular.ttf) format('TrueType');
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        h1 {
+            font: normal 6em 'moby';
+            color: #cc0018;
+            text-shadow: 2px 1px 4px #0000008c;
+            padding: 10px;
+            text-align: center;
+        }
+
+        body {
+            background-image: linear-gradient(90deg, #2972db 50%, #1b498b);
+        }
+
+        main {
+            min-height: 400px;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px 50px;
+            background-color: white;
+            font-size: 1.1em;
+            font-family: helvetica, arial;
+            border-radius: 3px;
+            box-shadow: 1px 2px 6px 2px #00000033;
+            text-align: justify;
+        }
+        
+        main > * {
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            font: normal 2.3em 'tenor', helvetica, arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio XVI</h1>
+    <main id="principal">
+        <h2>Quebrando um número</h2>
+        <p id="problema">Exercício 16: Crie um programa que leia um número Real qualquer pelo teclado e mostre na tela a sua porção Inteira.</p>
+        <p>Digite um valor: <input type="text" id="entrada" onchange="f()"></p>
+    </main>
+    <script>
+        function f() {
+            var entrada = window.document.getElementById('entrada')
+            var principal = window.document.getElementById('principal')
+
+            if (isNaN(entrada.value)) {window.alert('Digite um valor numérico')}
+            else {
+                principal.innerHTML += `
+                <p>
+                    O valor digitado foi <strong>${entrada.value}</strong>, e sua porção inteira é <strong>${(parseFloat(entrada.value)).toFixed(0)}</strong>
+                </p>`
+            }
+        }
+    </script>
+</body>
+</html>
