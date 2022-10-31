@@ -25,7 +25,7 @@
             var entrada = window.document.getElementById('entrada')
             var metros, centímetros, milímetros
             
-            if (isNaN(entrada.value)) {window.alert('Digite um número')}
+            if (isNaN(entrada.value) || entrada.value == '') {window.alert('Digite um número')}
             else {
                 metros = parseFloat(entrada.value)
                 centímetros = metros*100

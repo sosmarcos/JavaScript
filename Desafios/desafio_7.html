@@ -46,7 +46,7 @@
                 paragrafo.innerHTML = 'Primeira nota: <input type="text" id="entrada" onchange="f()">'
             }
             else {
-                if (isNaN(entrada.value)) {window.alert('Digite um número')}
+                if (isNaN(entrada.value) || entrada.value == '') {window.alert('Digite um número')}
                 else {
                     entrada = parseFloat(entrada.value)
                     if (!primeiraNota) {

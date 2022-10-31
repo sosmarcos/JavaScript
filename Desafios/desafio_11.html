@@ -84,7 +84,7 @@
             var entrada = window.document.getElementById('entrada')
             var pagina = window.document.getElementById('pagina')
             
-            if (isNaN(entrada.value)) {window.alert('Digite um número')}
+            if (isNaN(entrada.value) || entrada.value == '') {window.alert('Digite um número')}
             else {
                 if (!medida) {
                     largura = parseFloat(entrada.value)

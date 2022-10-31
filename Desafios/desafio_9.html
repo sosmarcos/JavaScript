@@ -60,7 +60,7 @@
             var entrada = window.document.getElementById('entrada')
             var número
 
-            if (isNaN(entrada.value)) {window.alert('Digite um número')}
+            if (isNaN(entrada.value) || entrada.value == '') {window.alert('Digite um número')}
             else {
                 número = parseInt(entrada.value)
                 document.body.innerHTML += `<div id="div_${div}"></div>`

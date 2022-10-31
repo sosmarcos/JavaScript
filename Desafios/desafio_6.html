@@ -42,7 +42,7 @@
         function f() {
             var entrada = window.document.getElementById('entrada').value
 
-            if (isNaN(entrada)) {window.alert('Digite um número inteiro')}
+            if (isNaN(entrada) || entrada.value == '') {window.alert('Digite um número inteiro')}
             else {
                 entrada = parseInt(entrada)
                 document.body.innerHTML += `

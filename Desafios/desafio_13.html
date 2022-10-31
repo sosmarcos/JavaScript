@@ -75,7 +75,7 @@
                 var principal = window.document.getElementById('principal')
                 var salário, aumento
 
-                if (isNaN(entrada.value)) {window.alert('Digite um valor numérico')}
+                if (isNaN(entrada.value) || entrada.value == '') {window.alert('Digite um valor numérico')}
                 else {
                     salário = parseFloat(entrada.value)
                     aumento = salário*15/100

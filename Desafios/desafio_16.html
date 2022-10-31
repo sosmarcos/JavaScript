@@ -67,7 +67,7 @@
             var entrada = window.document.getElementById('entrada')
             var principal = window.document.getElementById('principal')
 
-            if (isNaN(entrada.value)) {window.alert('Digite um valor numérico')}
+            if (isNaN(entrada.value) || entrada.value == '') {window.alert('Digite um valor numérico')}
             else {
                 principal.innerHTML += `
                 <p>

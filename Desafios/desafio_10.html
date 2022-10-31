@@ -64,7 +64,7 @@
             var pagina = window.document.getElementById('pagina')
             var valor
 
-            if (isNaN(entrada.value)) {window.alert('Digite um número')}
+            if (isNaN(entrada.value) || entrada.value == '') {window.alert('Digite um número')}
             else{
                 valor = parseFloat(entrada.value)
 
