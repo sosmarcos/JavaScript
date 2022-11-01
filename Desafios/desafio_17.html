@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Desafio 17</title>
+    <style>
+        @font-face {
+            font-family: kalam;
+            src: url(fonts/Kalam/Kalam-Light.ttf) format('TrueType');
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-image: linear-gradient(90deg, #0a560b, #09660a);
+            color: white;
+            font-family: 'kalam', arial;
+        }
+
+        h1 {
+            font-size: 5em;
+            text-shadow: 1px 1px 0px white;
+            text-align: center;
+        }
+
+        main {
+            margin: 0px 30px;
+        }
+
+        main > * {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2.5em;
+        }
+
+        p {
+            font-size: 1.3em;
+        }
+
+        #problema {
+            border: solid 2px white;
+            padding: 10px;
+            text-align: justify;
+            max-width: 730px;
+        }
+
+        input {
+            width: 70px;
+            font: normal 0.8em 'kalam', arial;
+            background-color: transparent;
+            color: white;
+            border: none;
+            border-bottom: solid 2px white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio XVII</h1>
+    <main id="principal" onload="draw()">
+        <h2>Catetos e Hipotenusa</h2>
+        <p id="problema">
+            Exercício 17: Faça um programa que leia o comprimento do cateto oposto e do cateto adjacente de um triângulo retângulo. 
+            Calcule e mostre o comprimento da hipotenusa.
+        </p>
+        <canvas id="canvas" width="500" height="200"></canvas>
+        <p>
+            Comprimento do cateto <strong>AB</strong>: <input type="text" id="oposto"><br>
+            Comprimento do cateto <strong>CA</strong>: <input type="text" id="adjacente">
+        </p>
+    </main>
+    <script>
+        var canvas = document.getElementById('canvas')
+        var contexto = canvas.getContext('2d')
+
+        // Exemplos de desenho
+        //
+        // contexto.fillStyle = 'rgb(255, 255, 255)'
+        // contexto.rect(20, 20, 100, 100)
+        // contexto.fill()
+        //
+        // contexto.clearRect(25, 25, 90, 90)
+        //
+        // contexto.moveTo(0,0)
+        // contexto.lineTo(100, 100)
+        // contexto.lineTo(200, 100)
+        // contexto.lineTo(200, 50)
+        // contexto.stroke()
+        
+        contexto.lineWidth = 3           // Grosura das linhas
+        contexto.strokeStyle = '#ffffff' // Cor das linhas
+        contexto.beginPath()
+
+        // bolinha
+        contexto.arc(35, 175, 2, 0, Math.PI * 2, true) 
+        
+        // triângulo
+        contexto.moveTo(20, 190)         // inicio
+        contexto.lineTo(20, 20)          // reta vertical
+        contexto.lineTo(465, 190)        // reta diagonal
+        contexto.closePath()             // fechamento do triângulo
+
+        // ângulo de 90°
+        contexto.moveTo(20, 160)
+        contexto.lineTo(50, 160)
+        contexto.lineTo(50, 190)
+        contexto.stroke()
+
+        // letras
+        contexto.font = '1.1em arial'
+        contexto.fillStyle = 'white'
+        contexto.fillText('A', 0, 200)
+        contexto.fillText('B', 0, 20)
+        contexto.fillText('C', 480, 200)
+        
+    </script>
+</body>
+</html>
