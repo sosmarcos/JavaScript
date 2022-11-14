@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja-Kana">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="cho.ico" type="image/x-icon">
+    <title>挑戦</title>
+    <style>
+        @font-face {
+            font-family: zen;
+            src: url(fonts/Zen_Antique/ZenAntique-Regular.ttf) format('TrueType');
+        }
+        @font-face {
+            font-family: hina;
+            src: url(fonts/Hina_Mincho/HinaMincho-Regular.ttf) format('TrueType');
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-image: linear-gradient(90deg, #b90e0e 50%, #d21212);
+        }
+
+        h1 {
+            padding: 10px 20px;
+            font: normal 6em 'zen',times;
+            color: black;
+            text-align: center;
+            text-shadow: 1px 0px 2px #424242ad;
+        }
+
+        main {
+            max-width: 1000px;
+            min-height: 500px;
+            background-color: white;
+            margin: 0px auto;
+            border-radius: 4px;
+            box-shadow: 1px 1px 2px 0px #00000057;
+        }
+
+        main > * {
+            padding: 10px 20px;
+        }
+
+        h2 {
+            font: normal 3em 'zen', times;
+        }
+
+        p {
+            font: normal 1.2em 'hina', times;
+        }
+
+        #chamada {
+            border-bottom: solid 1px grey;
+            font-size: 1.7em;
+        }
+    </style>
+</head>
+<body>
+    <h1>ボーナスの挑戦</h1>
+    <main>
+        <h2>図表の生成器</h2>
+        <p id="chamada">
+            下の空白に必要な情報を入れるのことでグラフを作って。
+        </p>
+        <p>
+            Titulo do Grâfico: <input type="text" id="nome"><br>
+            Número de Linhas: <input type="number" id="linhas"><br>
+            Número de Colunas: <input type="number" id="colunas"><br>
+            <input type="button" value="Costruir grâfico" onclick="construir()">
+        </p>
+        
+        <canvas id="grâfico" width="700" height="250"></canvas>
+    </main>
+    <script>
+        function construir() {
+            var nome = window.document.getElementById('nome')
+            var linhas = window.document.getElementById('linhas')
+            var colunas = window.document.getElementById('colunas')
+
+            var grâfico = window.document.getElementById('grâfico')
+            var contexto = grâfico.getContext('2d')
+
+            // desenhar as linhas
+            contexto.lineWidth = 0.5
+            contexto.strokeStyle = '#424242ad'
+
+            var eixoY = 240
+            var intervaloY = 190/parseInt(linhas.value)
+            for (var c=0; c<linhas.value; c++) {
+                contexto.moveTo(50, eixoY) // x=550 y=190
+                contexto.lineTo(600, eixoY)
+                contexto.stroke()
+
+                eixoY -= intervaloY
+            }
+
+            
+        }
+
+    </script>
+</body>
+</html>
