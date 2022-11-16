@@ -70,13 +70,40 @@
             Exercício 17: Faça um programa que leia o comprimento do cateto oposto e do cateto adjacente de um triângulo retângulo. 
             Calcule e mostre o comprimento da hipotenusa.
         </p>
-        <canvas id="canvas" width="500" height="200"></canvas>
-        <p>
-            Comprimento do cateto <strong>AB</strong>: <input type="text" id="oposto"><br>
-            Comprimento do cateto <strong>CA</strong>: <input type="text" id="adjacente">
+        <canvas id="canvas" width="500" height="200">triângulo</canvas>
+        <p id="rotulo">
+            Comprimento do cateto <strong>AB</strong>: <input type="text" id="entrada" onchange="f()">
         </p>
     </main>
     <script>
+        cateto = 0
+        var oposto, adjacente
+
+
+        function f() {
+            var entrada = window.document.getElementById('entrada')
+            var principal = window.document.getElementById('principal')
+            var rotulo = window.document.getElementById('rotulo')
+        
+            if (isNaN(entrada.value)) {window.alert('Digite um valor númerico')}
+            else {
+                if (cateto) {
+                    adjacente = parseFloat(entrada.value)
+
+                    rotulo.innerHTML = 'Comprimento do cateto <strong>AB</strong>: <input type="text" id="entrada" onchange="f()">'
+                    principal.innerHTML += `<p>Sua hipotenusa é de <strong>${(Math.sqrt(oposto**2 + adjacente**2)).toFixed(2)}</strong></p>`
+                    
+                    cateto = 0
+                }
+                else {
+                    oposto = parseFloat(entrada.value)
+                    rotulo.innerHTML = 'Comprimento do cateto <strong>CA</strong>: <input type="text" id="entrada" onchange="f()">'
+
+                    cateto++
+                }
+            }
+        }
+
         var canvas = document.getElementById('canvas')
         var contexto = canvas.getContext('2d')
 
