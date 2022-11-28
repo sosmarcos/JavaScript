@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Desafio 18</title>
+    <style>
+        @font-face {
+            font-family: hina;
+            src: url(fonts/Hina_Mincho/HinaMincho-Regular.ttf) format('TrueType');
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-image: linear-gradient(90deg, #c8c6c6, #eaeaea);
+        }
+
+        h1 {
+            padding: 10px;
+            font: normal 5em 'hina', 'Times';
+            text-align: left;
+            background-color: black;
+            color: white;
+        }
+
+        main {
+            margin: 10px auto;
+            padding: 10px 20px;
+            max-width: 900px;
+            min-height: 500px;
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: 1px 1px 1px #0000002e;
+        }
+
+        h2 {
+            margin: 10px;
+            font-size: 2.5em;
+            border-bottom: dashed 2px #6c6c6c;
+        }
+
+        p {
+            padding: 10px 30px;
+            font: normal 1.1em 'arial';
+        }
+
+        input {
+            width: 50px;
+            border-style: dotted;
+            border-width: 0px 0px 2px 0px;
+            border-color: #4e4d4d;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio XVIII</h1>
+    <main id="principal">
+        <h2>Seno, Cosseno e Tangente</h2>
+        <p>Exercício 18: Faça um programa que leia um ângulo qualquer e mostre na tela o valor do seno, cosseno e tangente desse ângulo.</p>
+        <p>Digite o valor do ângulo: <input type="text" id="entrada" onchange="f()"></p>
+    </main>
+    <script>
+        function f() {
+            var principal = window.document.getElementById('principal')
+            var entrada = window.document.getElementById('entrada')
+            var ângulo, rad, seno, cosseno, tangente
+
+            if (isNaN(entrada.value)) {window.alert('Digite um Valor Numérico')}
+            else {
+                ângulo = parseFloat(entrada.value)
+                seno = Math.sin(ângulo*Math.PI/180)
+                cosseno = Math.cos(ângulo*Math.PI/180)
+                tangente = Math.tan(ângulo*Math.PI/180)
+
+                principal.innerHTML += `
+                <p>
+                    Ângulo de ${ângulo}°:<br>
+                    Seno igual a ${seno.toFixed(2)}, cosseno igual a ${cosseno.toFixed(2)} e tangente igual a ${tangente.toFixed(2)}
+                </p>`
+            }
+        }
+    </script>
+</body>
+</html>
