@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Desafio 19</title>
+    <style>
+        @font-face {
+            font-family: 'zen';
+            src: url(fonts/Zen_Antique/ZenAntique-Regular.ttf) format('TrueType');
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-image: linear-gradient(90deg, #cccccc, #dbdbdb);
+        }
+
+        h1 {
+            padding: 20px 10px;
+            font: normal 5em 'zen', times;
+            background-image: linear-gradient(90deg, #873535, #934949);
+            color: #f7ac2f;
+            text-shadow: 1px 1px 1px #0000008c;
+            box-shadow: 0px 1px 1px #00000052;
+        }
+
+        main {
+            margin: 0px auto;
+            max-width: 1200px;
+            min-height: 564px;
+            background-color: white;
+        }
+
+        h2 {
+            padding: 20px 30px;
+            font-size: 3em;
+            font-weight: normal;
+        }
+
+        main > p {
+            padding: 10px 30px;
+            text-align: justify;
+            font-size: 1.1em;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #rotulo {
+            display: inline-block;
+            padding-right: 5px;
+        }
+
+        input {
+            border-width: 0px 0px 2px 0px;
+            border-style: dashed;
+            border-color: #535151;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio XIX</h1>
+    <main id="principal">
+        <h2>Sorteando um item na lista</h2>
+        <p>
+            Exercício 19: Um professor quer sortear um dos seus quatro alunos para apagar o quadro. 
+            Faça um programa que ajude ele, lendo o nome dos alunos e escrevendo na tela o nome do escolhido.
+        </p>
+        <p id="rotulo">Nome do primeiro aluno:</p><input type="text" id="entrada" onchange="f()">
+    </main>
+    <script>
+        var alunos = []
+        var random
+        function f() {
+            var principal = window.document.getElementById('principal')
+            var rotulo = window.document.getElementById('rotulo')
+            var entrada = window.document.getElementById('entrada')
+            
+            if (entrada.value == '') {window.alert('Digite um nome na caixa de entrada')}
+            else {
+                alunos.push(entrada.value)
+                if (alunos.length == 1) {rotulo.innerText = 'Nome do segundo aluno:'}
+                else if (alunos.length == 2) {rotulo.innerText = 'Nome do terceiro aluno:'}
+                else if (alunos.length == 3) {rotulo.innerText = 'Nome do quarto aluno'}
+                else if (alunos.length == 4) {
+                    rotulo.innerText = 'Nome do primeiro aluno:'
+
+                    random = Math.floor(Math.random() * alunos.length);
+                    principal.innerHTML += `<p>O aluno sortiado para apagar o quadro foi <strong>${alunos[random]}</strong></p>`
+                    alunos = []
+                }
+                entrada.value = ''
+            } console.log(alunos)
+        }
+    </script>
+</body>
+</html>
