@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="base.css"> <!--Apartir do desafio 20, utilizo um estilo padronizado nos desafios-->
+    <title>Desafio 20</title>
+</head>
+<body>
+    <h1 class="island">Desafio XX</h1>
+    <main id="principal">
+        <h2>Sorteando uma ordem na lista</h2>
+        <p>
+            Exercício 20: O mesmo professor do desafio 19 quer sortear a ordem de apresentação de trabalhos dos alunos. 
+            Faça um programa que leia o nome dos quatro alunos e mostre a ordem sorteada.
+        </p>
+        <label for="entrada" id="etiqueta">Nome do primeiro aluno:</label>
+        <input type="text" id="entrada" onchange="f()">
+    </main>
+    <script>
+        var alunos = []
+        function f() {
+            var principal = window.document.getElementById('principal')
+            var etiqueta = window.document.getElementById('etiqueta')
+            var entrada = window.document.getElementById('entrada')
+
+            if (entrada.value == '') {window.alert('Digite um nome na caixa de entrada')}
+            else {
+                var nome = entrada.value
+                alunos.push(`${nome[0].toUpperCase()}${nome.toLowerCase().slice(1)}`)
+                entrada.value = ''
+
+                if (alunos.length == 1) {etiqueta.innerText = 'Nome do segundo aluno:'}
+                else if (alunos.length == 2) {etiqueta.innerText = 'Nome do terceiro aluno:'}
+                else if (alunos.length == 3) {etiqueta.innerText = 'Nome do quarto aluno:'}
+                else {
+                    alunos = shuffle(alunos)
+                    principal.innerHTML += `
+                    <p>
+                        A ordem de apresentação dos alunos é:<br>
+                        <strong class='blue'>1ª ${alunos[0]}, 2ª ${alunos[1]}, 3ª ${alunos[2]}, 4ª ${alunos[3]}</strong>
+                    </p>`
+                    
+                    alunos = []
+                    etiqueta.innerText = 'Nome do primeiro aluno:'
+                }
+            }
+            console.log(alunos)
+        }
+
+        function shuffle(lista) {
+            let indexAtual = lista.length,  indexAleatorio;
+
+            // Enquanto restam elementos para embaralhar.
+            while (indexAtual != 0) {
+
+                // Escolha um elemento restante.
+                indexAleatorio = Math.floor(Math.random() * indexAtual);
+                indexAtual--;
+
+                // E troque-o pelo elemento atual.
+                [lista[indexAtual], lista[indexAleatorio]] = [
+                lista[indexAleatorio], lista[indexAtual]];
+            }
+
+            return lista;
+        }
+    </script>
+</body>
+</html>

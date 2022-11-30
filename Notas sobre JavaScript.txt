@@ -42,6 +42,10 @@ s.length                  |  n.toFixed(2)
 s.toUpperCase()           |  n.toFixed(2),replace('.', ',')
 s.toLowerCase()           |
 
+Para captalizar a primeira letra de um nome:
+Primeiro coloque a primeira letra em uppercase             «--|nome[0].toUpperCase()
+Depois reescreva o resto do nome cortando a primeira letra «--|nome.toLowerCase().slice(1)
+
 =======================================================|Operadores|=======================================================
 
 Operadores em JavaScript:

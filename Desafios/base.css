@@ -1,0 +1,104 @@
+@font-face {
+    font-family: 'misa';
+    src: url(fonts/13misa/13_Misa.TTF) format('TrueType');
+}
+
+@font-face {
+    font-family: 'astrolab';
+    src: url(fonts/astrolab/Astrolab.ttf) format('TrueType');
+}
+
+@font-face {
+    font-family: 'hina';
+    src: url(fonts/Hina_Mincho/HinaMincho-Regular.ttf) format('TrueType');
+}
+
+@font-face {
+    font-family: 'island';
+    src: url(fonts/Island_Moments/IslandMoments-Regular.ttf) format('TrueType');
+}
+
+@font-face {
+    font-family: 'jacinto';
+    src: url(fonts/jacinto_sans/Jacinto_Sans.otf) format('OpenType');
+}
+
+@font-face {
+    font-family: 'kalam';
+    src: url(fonts/Kalam/Kalam-Regular.ttf) format('TrueType');
+}
+
+@font-face {
+    font-family: 'moby';
+    src: url(fonts/moby_dick/Moby\ DIck.ttf) format('TrueType');
+}
+
+@font-face {
+    font-family: 'tenor';
+    src: url(fonts/Tenor_Sans/TenorSans-Regular.ttf) format('TrueType');
+}
+
+@font-face {
+    font-family: 'westwood';
+    src: url(fonts/westwood_studio/Westwood\ Studio.ttf) format('TrueType');
+}
+
+@font-face {
+    font-family: 'zen';
+    src: url(fonts/Zen_Antique/ZenAntique-Regular.ttf) format('TrueType');
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-image: linear-gradient(90deg, rgb(178 187 219), rgb(211 216 236));
+}
+
+h1.island {
+    padding: 0px 20px;
+    background-image: linear-gradient(144deg, #465794, #5269b7);
+    color: white;
+    font: normal 7em 'island';
+    text-shadow: 1px 1px 1px black;
+    box-shadow: 0px 1px 5px 1px #3b3b3b69;
+}
+
+main {
+    margin: 10px auto;
+    padding: 5px;
+    max-width: 1100px;
+    min-height: 550px;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px 1px #00000021;
+    text-align: justify;
+}
+
+h2 {
+    padding: 15px;
+    font: normal 2.3em 'tenor';
+}
+
+p {
+    padding: 10px 20px;
+    font: normal 1.1em 'arial';
+}
+
+label {
+    padding: 20px 2px 20px 20px;
+    font: normal 1.1em 'arial';
+}
+
+input {
+    font: normal 1.1em 'arial';
+    border-width: 0px 0px 1px 0px;
+    border-style: dashed;
+    color: #0d68e6;
+}
+
+strong.blue {
+    color: #0d68e6;
+}
