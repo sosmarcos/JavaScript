@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="base.css">
+    <title>Desafio 21</title>
+    <style>
+        button#bip {
+            display: block;
+            margin: 10px auto;
+            width: 300px;
+            font: normal 3em 'hina';
+            background-color: #7998d8;
+            color: white;
+            text-shadow: 1px 1px 1px black;
+            border: 0px;
+        }
+
+        button#bip:hover {
+            background-color: #5c729e;
+        }
+
+        button#bip:active {
+            box-shadow: inset 1px 1px 1px black;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="island">Desafio XXI</h1>
+    <main id="principal" onload="f()">
+        <h2>Tocando um MP3</h2>
+        <p>Exercício 21: Faça um programa em JavaScript que abra e reproduza o áudio de um arquivo MP3.</p>
+        <button id="bip" onclick="f()">Bip</button>
+    </main>
+    <script>
+        var bip = new Audio('bip.mp3')
+        function f() {
+            bip.play()
+        }
+    </script>
+</body>
+</html>
