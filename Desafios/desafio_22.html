@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="base.css">
+    <title>Desafio 22</title>
+</head>
+<body>
+    <h1 class="island">Desafio XXII</h1>
+    <main id="principal">
+        <h2>Analisador de Textos</h2>
+        <p>
+            Exercício 22: Crie um programa que leia o nome completo de uma pessoa e mostre:<br>
+             – O nome com todas as letras maiúsculas e minúsculas.<br>
+             – Quantas letras ao todo (sem considerar espaços).<br>
+             – Quantas letras tem o primeiro nome.
+        </p>
+        <label for="entrada">Digite um nome completo:</label>
+        <input type="text" id="entrada" onchange="f()">
+    </main>
+    <script>
+        function f() {
+            var principal = window.document.getElementById('principal')
+            var entrada = window.document.getElementById('entrada')
+
+            if (entrada.value == '') {window.alert('Digite um nome na caixa de entrada')}
+            else {
+                var nome = entrada.value.trim(); console.log(nome.split(' '))
+                var nomeUpper = nome.toUpperCase()
+                var nomeLower = nome.toLowerCase()
+                var nomeCount = nome.length - (nome.split(' ').length - 1)
+                var nomeFirst = `${nomeUpper[0]}${nomeLower.split(' ')[0].slice(1)}`
+                entrada.value = ''
+
+                principal.innerHTML += `
+                <p>
+                    Seu nome em maiúsculas é: <strong class='blue'>${nomeUpper}</strong><br>
+                    Seu nome em minúsculas é: <strong class='blue'>${nomeLower}</strong><br>
+                    Seu nome tem ao todo <strong class='blue'>${nomeCount}</strong> letras<br>
+                    Seu primeiro nome é <strong class='blue'>${nomeFirst}</strong> 
+                    e ele tem <strong class='blue'>${nome.split(' ')[0].length}</strong> letras
+                </p>`
+            }
+        }
+    </script>
+</body>
+</html>

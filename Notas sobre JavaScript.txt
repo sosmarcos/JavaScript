@@ -42,6 +42,9 @@ s.length                  |  n.toFixed(2)
 s.toUpperCase()           |  n.toFixed(2),replace('.', ',')
 s.toLowerCase()           |
 
+s.trim()  «--|Como o strip em python, ele remove da string os espaços antes e depois da palavra
+s.split(' ') «--|Como no python, ele divide uma cadeia de caracteres 
+
 Para captalizar a primeira letra de um nome:
 Primeiro coloque a primeira letra em uppercase             «--|nome[0].toUpperCase()
 Depois reescreva o resto do nome cortando a primeira letra «--|nome.toLowerCase().slice(1)
