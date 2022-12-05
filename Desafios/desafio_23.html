@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="base.css">
+    <title>Desafio 23</title>
+</head>
+<body>
+    <h1 class="island">Desafio XXIII</h1>
+    <main id="principal">
+        <h2>Separando dígitos de um número</h2>
+        <p>Exercício 23: Faça um programa que leia um número de 0 a 9999 e mostre na tela cada um dos dígitos separados.</p>
+        <label for="entrada">Digite um número qualquer:</label>
+        <input type="text" id="entrada" onchange="f()">
+    </main>
+    <script>
+        function f() {
+            var principal = window.document.getElementById('principal')
+            var entrada = window.document.getElementById('entrada')
+            var número = entrada.value.trim()
+
+            if (isNaN(número)) {window.alert('Digite um valor numérico')}
+            else if (número.length > 4) {window.alert('Digite um número entre 0 e 9999')}
+            else {
+                parseInt(número)
+                principal.innerHTML += `
+                <p>
+                    Analisando o número <strong class='blue'>${número}</strong><br>
+                    Unidade: ${número%10}<br>
+                    Dezena: ${parseInt(número/10 %10)}<br>
+                    Centena: ${parseInt(número/100 %10)}<br>
+                    Milhar: ${parseInt(número/1000)}<br>
+                </p>`
+            } 
+        }
+    </script>
+</body>
+</html>
