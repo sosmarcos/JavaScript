@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="base.css">
+    <title>Desafio 24</title>
+</head>
+<body>
+    <h1 class="island">Desafio XXIV</h1>
+    <main id="principal">
+        <h2>Verificando as primeiras letras de um texto</h2>
+        <p>Exercício 24: Crie um programa que leia o nome de uma cidade diga se ela começa ou não com o nome “SANTO”.</p>
+        <label for="entrada">Digite o nome da sua cidade:</label>
+        <input type="text" id="entrada" onchange="f()">
+    </main>
+    <script>
+        function f() {
+            var principal = window.document.getElementById('principal')
+            var entrada = window.document.getElementById('entrada')
+            entrada.value = entrada.value.trim()
+
+            if (entrada.value.length < 2) {window.alert('Digite um nome valido')}
+            else {
+                var cidade = `${entrada.value[0].toUpperCase()}${entrada.value.toLowerCase().slice(1)}`
+
+                if (cidade[0] == 'S') {principal.innerHTML += `<p>Parece que o nome da sua cidade <strong class='blue'>começa</strong> com “SANTO”</p>`}
+                else {principal.innerHTML += `<p>Parece que o nome da sua cidade <strong class='blue'>não começa</strong> com “SANTO”</p>`}
+            }
+        }
+    </script>
+</body>
+</html>
