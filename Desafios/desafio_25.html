@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="base.css">
+    <title>Desafio 25</title>
+</head>
+<body>
+    <h1 class="island">Desafio XXV</h1>
+    <main id="principal">
+        <h2>Procurando uma string dentro de outra</h2>
+        <p>Exercício 25: Crie um programa que leia o nome de uma pessoa e diga se ela tem “SILVA” no nome.</p>
+        <label for="entrada">Digite seu nome completo:</label>
+        <input type="text" id="entrada" onchange="f()">
+        <p id="resposta"></p>
+    </main>
+    <script>
+        function f() {
+            var entrada = window.document.getElementById('entrada')
+            var resposta = window.document.getElementById('resposta')
+            var silva = false
+            entrada.value = entrada.value.trim()
+
+            if (!isNaN(entrada.value) || entrada.value.length < 2) {window.alert('Digite um nome valido')}
+            else {
+                var nome = entrada.value.toLowerCase().split(' ')
+
+                for (let index in nome) {
+                    if (nome[index] == 'silva') {silva = true}
+                }
+                
+                if (silva) {resposta.innerText = 'Realmente você tem Silva no nome'}
+                else {resposta.innerText = 'Infelismente você não tem Silva no nome'}
+
+                entrada.value = ""
+            }
+        }
+    </script>
+</body>
+</html>
