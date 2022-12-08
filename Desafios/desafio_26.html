@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="base.css">
+    <title>Desafio 26</title>
+</head>
+<body>
+    <h1 class="island">Desafio XXVI</h1>
+    <main id="principal">
+        <h2>Primeira e última ocorrência de uma string</h2>
+        <p>
+            Exercício Python 26: Faça um programa que leia uma frase pelo teclado e mostre quantas vezes aparece a letra “A”, 
+            em que posição ela aparece a primeira vez e em que posição ela aparece a última vez.
+        </p>
+        <label for="entrada">Digite um frase para a analise:</label>
+        <input type="text" id="entrada" onchange="f()">
+        <p id="resposta"></p>
+    </main>
+    <script>
+        function f() {
+            var resposta = window.document.getElementById('resposta')
+            var entrada = window.document.getElementById('entrada')
+            var frase = entrada.value.toLowerCase().trim()
+            var count = 0
+
+            for (var index = 0;index < frase.length; index++) {if (frase[index] == 'a') {count++};console.log(frase[index])}
+            
+            resposta.innerHTML = `
+            <p>
+                A letra <strong class='blue'>“A”</strong> aparece <strong class='blue'>${count}</strong> vezes na frase
+            </p>`
+            
+            if (count) {
+                resposta.innerHTML += `
+                <p>
+                    O primeiro <strong class='blue'>“A”</strong> é a <strong class='blue'>${frase.indexOf('a') + 1}º</strong> letra da frase
+                </p>`
+            }
+
+            if (count > 1) {
+                resposta.innerHTML += `
+                <p>
+                    E o ultimo é a <strong class='blue'>${frase.lastIndexOf('a') + 1}º</strong> letra da frase
+                </p>`
+            }
+
+            entrada.value = ''
+        }
+    </script>
+</body>
+</html>

@@ -49,6 +49,10 @@ Para captalizar a primeira letra de um nome:
 Primeiro coloque a primeira letra em uppercase             «--|nome[0].toUpperCase()
 Depois reescreva o resto do nome cortando a primeira letra «--|nome.toLowerCase().slice(1)
 
+s.search() é um metodo que serve para encontrar elementos específicos em uma string
+s.indexOf() tambem serve para retorna a posição de um valor específico, sendo que -1 significa que não ha este valor
+s.lastIndexOf() encontra a ultima ocorrencia de um valor específico
+
 =======================================================|Operadores|=======================================================
 
 Operadores em JavaScript:
