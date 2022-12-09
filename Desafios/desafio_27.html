@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="base.css">
+    <title>Desafio 27</title>
+</head>
+<body>
+    <h1 class="island">Desafio XXVII</h1>
+    <main>
+        <h2>Primeiro e último nome de uma pessoa</h2>
+        <p>Exercício 27: Faça um programa que leia o nome completo de uma pessoa, mostrando em seguida o primeiro e o último nome separadamente.</p>
+        <label for="entrada">Digite seu nome completo:</label>
+        <input type="text" id="entrada" onchange="f()">
+        <p id="retorno"></p>
+    </main>
+    <script>
+        function f() {
+            var entrada = window.document.getElementById('entrada')
+            var retorno = window.document.getElementById('retorno')
+            entrada.value = entrada.value.toLowerCase().trim()
+
+            if (!isNaN(entrada.value)) {window.alert('Digite um nome e não um número')}
+            else {
+                var nome = entrada.value.split(' ')
+                for (let index in nome) {nome[index] = `${nome[index][0].toUpperCase()}${nome[index].slice(1)}`}
+                console.log(nome)
+
+                if (nome.length < 2) {window.alert('Digite seu nome completo respeitando os espações')}
+                else {
+                    retorno.innerHTML = `
+                    Seu primeiro nome é <strong class='blue'>${nome[0]}</strong> e o ultimo é <strong class='blue'>${nome[nome.length - 1]}</strong>
+                    `
+                }
+            }
+            entrada.value = ''
+        }
+    </script>
+</body>
+</html>
