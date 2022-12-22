@@ -6,8 +6,12 @@ body {
     margin: 0px;
 }
 
-body > label, input, p {
-    font-size: 1.1em;
+body > label, input, #retorno {
+    font-size: 1.7em;
+}
+
+#registro {
+    font-size: 1.3em;
 }
 
 h1 {
@@ -23,7 +27,11 @@ label {
 }
 
 #entrada {
-    width: 60px;
+    width: 90px;
     border-width: 0px 0px 1px 0px;
     border-style: dashed;
+}
+
+p {
+    margin: 10px;
 }
