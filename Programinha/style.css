@@ -7,11 +7,11 @@ body {
 }
 
 body > label, input, #retorno {
-    font-size: 1.7em;
+    font-size: 1.3em;
 }
 
 #registro {
-    font-size: 1.3em;
+    font-size: 1.1em;
 }
 
 h1 {
@@ -27,7 +27,7 @@ label {
 }
 
 #entrada {
-    width: 90px;
+    width: 65px;
     border-width: 0px 0px 1px 0px;
     border-style: dashed;
 }
